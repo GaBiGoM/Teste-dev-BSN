@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<body>
+  <div>
+    <h3>Editar Vaga</h3>
+    <form (ngSubmit)='updateVagas()'>
+      <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite o nome da linguagem"
+        aria-describedby="basic-addon1" [(ngModel)]="vagas.nome" required>
+
+      <select name="id_linguagem" id="id_linguagem" [(ngModel)]="vagas.id_linguagem">
+        <option selected disabled>Escolha sua Linguagem</option>
+        <option *ngFor="let emp of linguagems" [value]="emp.id">{{emp.nome}}</option>
+      </select>
+      <button type="submit" class="btn btn-dark">Atualizar</button>
+    </form>
+  </div>
+</body>

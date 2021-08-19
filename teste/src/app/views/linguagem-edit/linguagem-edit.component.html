@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<body>
+  <div>
+    <h3>Editar Linguagem</h3>
+    <form (ngSubmit)='updateLinguagem()'>
+    <input type="text" name="nome" id="nome" class="form-control"
+           placeholder="Digite o nome da linguagem"[(ngModel)]="linguagem.nome" aria-describedby="basic-addon1">
+    <button type="submit" class="btn btn-dark">Cadastrar</button>
+  </form>
+  </div>
+  </body>

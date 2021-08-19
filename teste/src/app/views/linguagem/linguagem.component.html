@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<body>
+<div>
+  <h3>Cadastrar Linguagem</h3>
+  <form (ngSubmit)="insertLinguagem()">
+  <input type="text" name="nome" id="nome" [(ngModel)]="linguagem.nome" class="form-control" placeholder="Digite o nome da linguagem" aria-label="Username" aria-describedby="basic-addon1">
+  <button type="submit" class="btn btn-dark">Cadastrar</button>
+</form>
+</div>
+<table  class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Linguagem</th>
+      <th scope="col">Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of linguagems">
+      <th scope="row">{{emp.id}}</th>
+      <td>{{emp.nome}}</td>
+      <td>
+        <div class="example-button-row">
+          <button type="button" class="btn btn-primary" routerLink="/edit/{{emp.id}}">Editar</button>
+          <button type="button" class="btn btn-primary" (click)="deleteLinguagem(emp.id)">Excluir</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</body>

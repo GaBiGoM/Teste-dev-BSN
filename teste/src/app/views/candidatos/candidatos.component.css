@@ -1,0 +1,19 @@
+.table{
+  width: 89%;
+  margin: 5%;
+}
+
+.form-control{
+  width: 20%;
+  margin: 2%;
+}
+
+h3{
+  width: 20%;
+  margin: 2%;
+}
+
+.btn{
+  width: 10%;
+  margin-left: 2%;
+}

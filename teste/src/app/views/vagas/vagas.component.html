@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<body>
+<div>
+  <h3>Cadastrar Vaga</h3>
+  <form (ngSubmit)='insertVagas()'>
+  <input type="text" name="nome" id="nome" [(ngModel)]="vaga.nome" class="form-control" placeholder="Digite o nome da vaga" aria-label="Username" aria-describedby="basic-addon1">
+  <select name="id_linguagem" id="id_linguagem" [(ngModel)]="vaga.id_linguagem" >
+    <option  selected disabled>Escolha sua Linguagem</option>
+    <option *ngFor="let emp of linguagems" [value]="emp.id">{{emp.nome}}</option>
+  </select>
+  <button type="submit" class="btn btn-dark">Cadastrar</button>
+
+</form>
+</div>
+<table  class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Vaga</th>
+      <th scope="col">Linguagem</th>
+      <th scope="col">Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of vagas" >
+      <th scope="row">{{emp.id}}</th>
+      <td>{{emp.nome}}</td>
+      <td>{{emp.linguagem.nome}}</td>
+      <td>
+        <div class="example-button-row">
+          <button type="button" class="btn btn-primary" routerLink="/edit-vaga/{{emp.id}}" >Editar</button>
+          <button type="button" class="btn btn-primary" (click)="deleteVagas(emp.id)">Excluir</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+

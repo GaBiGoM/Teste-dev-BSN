@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<body>
+  <div>
+    <h3>Cadastrar Candidato</h3>
+    <form (ngSubmit)="updateCandidato()">
+      <input type="text" name="nome" id="nome" [(ngModel)]="candidato.nome" class="form-control"
+        placeholder="Digite o nome do candidato" aria-label="Username" aria-describedby="basic-addon1">
+
+      <input type="text" name="email" id="email" [(ngModel)]="candidato.email" class="form-control"
+        placeholder="Digite o nome do email" aria-label="Username" aria-describedby="basic-addon1">
+
+      <select name="id_vaga" id="id_vaga" [(ngModel)]="candidato.id_vaga">
+        <option *ngFor="let emp of vagas" [value]="emp.id">{{emp.nome}}</option>
+      </select>
+      <select name="id_linguagem" id="id_linguagem" [(ngModel)]="candidato.id_linguagem">
+        <option *ngFor="let emp of linguagems" [value]="emp.id">{{emp.nome}}</option>
+      </select>
+      <button type="submit" class="btn btn-dark">Atualizar</button>
+  </form>
+  </div>
+  </body>
+
